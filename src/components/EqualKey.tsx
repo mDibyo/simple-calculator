@@ -3,7 +3,11 @@ import CalculatorContext from "./CalculatorContext";
 
 function EqualKey() {
   const { finalizeOperation } = useContext(CalculatorContext);
-  return <button onClick={finalizeOperation}>=</button>;
+  return (
+    <button className="calculator--key" onClick={finalizeOperation}>
+      =
+    </button>
+  );
 }
 
 export default EqualKey;

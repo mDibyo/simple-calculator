@@ -4,7 +4,7 @@ import { Operation } from "./types";
 
 function Operations() {
   return (
-    <div>
+    <div className="calculator--operations">
       <OperatorKey operation={Operation.Addition} value="+" />
       <OperatorKey operation={Operation.Subtraction} value="−" />
       <OperatorKey operation={Operation.Multiplication} value="×" />

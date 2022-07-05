@@ -9,7 +9,14 @@ interface OperatorKeyProps {
 
 function OperatorKey({ value, operation }: OperatorKeyProps) {
   const { pushOperation } = useContext(CalculatorContext);
-  return <button onClick={() => pushOperation(operation)}>{value}</button>;
+  return (
+    <button
+      className="calculator--key"
+      onClick={() => pushOperation(operation)}
+    >
+      {value}
+    </button>
+  );
 }
 
 export default OperatorKey;

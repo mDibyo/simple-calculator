@@ -3,7 +3,7 @@ import CalculatorContext from "./CalculatorContext";
 
 function Display() {
   const { currentStackValue } = useContext(CalculatorContext);
-  return <div>{currentStackValue}</div>;
+  return <div className="calculator--display">{currentStackValue}</div>;
 }
 
 export default Display;

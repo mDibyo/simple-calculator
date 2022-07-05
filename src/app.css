@@ -1,0 +1,43 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  width: 200px;
+  background-color: lightgray;
+  border: 1px solid gray;
+}
+
+.calculator--display {
+  background-color: white;
+  text-align: end;
+  font-size: 3em;
+  padding: 4px;
+}
+
+.calculator--inputs {
+  display: flex;
+}
+
+.calculator--numpad {
+  flex-direction: column;
+  justify-content: stretch;
+  flex: 3;
+}
+
+.calculator--numpadRow {
+  display: flex;
+  align-items: stretch;
+}
+
+.calculator--operations {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.calculator--key {
+  height: 60px;
+  margin: 4px;
+  flex: 1 0 auto;
+}

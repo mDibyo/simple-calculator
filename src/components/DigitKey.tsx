@@ -7,7 +7,11 @@ interface DigitKeyProps {
 
 function DigitKey({ value }: DigitKeyProps) {
   const { pushDigit } = useContext(CalculatorContext);
-  return <button onClick={() => pushDigit(value)}>{value}</button>;
+  return (
+    <button className="calculator--key" onClick={() => pushDigit(value)}>
+      {value}
+    </button>
+  );
 }
 
 export default DigitKey;

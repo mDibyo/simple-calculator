@@ -8,11 +8,12 @@ function Calculator() {
   console.log("hello");
   return (
     <CalculatorProvider>
-      <div>
+      <div className="calculator">
         <Display />
-        <Numpad />
-        <BackspaceKey />
-        <Operations />
+        <div className="calculator--inputs">
+          <Numpad />
+          <Operations />
+        </div>
       </div>
     </CalculatorProvider>
   );
