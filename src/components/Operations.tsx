@@ -1,10 +1,14 @@
 import EqualKey from "./EqualKey";
 import OperatorKey from "./OperatorKey";
+import { Operation } from "./types";
 
 function Operations() {
   return (
     <div>
-      <OperatorKey value="+" />
+      <OperatorKey operation={Operation.Addition} value="+" />
+      <OperatorKey operation={Operation.Subtraction} value="−" />
+      <OperatorKey operation={Operation.Multiplication} value="×" />
+      <OperatorKey operation={Operation.Division} value="÷" />
       <EqualKey />
     </div>
   );
