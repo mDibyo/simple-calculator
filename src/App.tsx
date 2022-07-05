@@ -1,5 +1,5 @@
-import Numpad from "./components/NumPad";
+import Calculator from "./components/Calculator";
 
 export function App() {
-  return <Numpad></Numpad>;
+  return <Calculator />;
 }

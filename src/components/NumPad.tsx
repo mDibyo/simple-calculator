@@ -1,26 +1,26 @@
-import Digit from "./Digit";
+import DigitKey from "./DigitKey";
 
 function Numpad() {
   return (
     <div>
       <div>
-        <Digit digit="1" />
-        <Digit digit="2" />
-        <Digit digit="3" />
+        <DigitKey value="1" />
+        <DigitKey value="2" />
+        <DigitKey value="3" />
       </div>
       <div>
-        <Digit digit="4" />
-        <Digit digit="5" />
-        <Digit digit="6" />
+        <DigitKey value="4" />
+        <DigitKey value="5" />
+        <DigitKey value="6" />
       </div>
       <div>
-        <Digit digit="7" />
-        <Digit digit="8" />
-        <Digit digit="9" />
+        <DigitKey value="7" />
+        <DigitKey value="8" />
+        <DigitKey value="9" />
       </div>
       <div>
-        <Digit digit="0" />
-        <Digit digit="." />
+        <DigitKey value="0" />
+        <DigitKey value="." />
       </div>
     </div>
   );
