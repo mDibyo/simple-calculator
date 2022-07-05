@@ -13,7 +13,7 @@ interface CalculatorContextValue {
   pushOperator(operator: string): void;
   finalizeOperation(): void;
 
-  currentStackValue: number;
+  currentStackValue: string;
 }
 
 // TODO: Type defaultValue correctly
@@ -22,7 +22,7 @@ const CalculatorContext = createContext<CalculatorContextValue>(
 );
 
 function calculateDigitsValue(digits: string[]): number {
-  return parseInt(digits.join(""), 10);
+  return parseFloat(digits.join(""));
 }
 
 export function CalculatorProvider({ children }) {
@@ -84,8 +84,8 @@ export function CalculatorProvider({ children }) {
   }, []);
 
   const currentStackValue =
-    calculateDigitsValue(currentStackFrame.digits) ||
-    currentStackFrame.previousValue;
+    currentStackFrame.digits.join("") ||
+    currentStackFrame.previousValue.toString();
   const value = useMemo(
     () => ({
       pushDigit,
