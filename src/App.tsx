@@ -1,3 +1,5 @@
+import Numpad from "./components/NumPad";
+
 export function App() {
-  return <h1>Hello world!</h1>;
+  return <Numpad></Numpad>;
 }
