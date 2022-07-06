@@ -1,5 +1,5 @@
 import { createContext, useCallback, useMemo, useState } from "react";
-import { Operation } from "./types";
+import { Operation, operationCalculators } from "./operations";
 
 interface StackFrame {
   digits: string[];
@@ -26,15 +26,6 @@ function parseDigits(digits: string[]): number {
   return parseFloat(digits.join(""));
 }
 
-const operationCalculators: {
-  [operation in Operation]: (value1: number, value2: number) => number;
-} = {
-  [Operation.Addition]: (val1, val2) => val1 + val2,
-  [Operation.Subtraction]: (val1, val2) => val1 - val2,
-  [Operation.Multiplication]: (val1, val2) => val1 * val2,
-  [Operation.Division]: (val1, val2) => val1 / val2,
-};
-
 export function CalculatorProvider({ children }) {
   const [currentStackFrame, setCurrentStackFrame] = useState<StackFrame>({
     digits: [],
@@ -53,18 +44,6 @@ export function CalculatorProvider({ children }) {
       ...stackFrame,
       digits: stackFrame.digits.slice(0, -1),
     }));
-  }, []);
-
-  const pushOperation = useCallback((operation: Operation) => {
-    finalizeOperation();
-    setCurrentStackFrame((stackFrame) => {
-      return {
-        previousValue:
-          parseDigits(stackFrame.digits) || stackFrame.previousValue,
-        digits: [],
-        operation,
-      };
-    });
   }, []);
 
   const finalizeOperation = useCallback(() => {
@@ -87,6 +66,20 @@ export function CalculatorProvider({ children }) {
       };
     });
   }, []);
+  const pushOperation = useCallback(
+    (operation: Operation) => {
+      finalizeOperation();
+      setCurrentStackFrame((stackFrame) => {
+        return {
+          previousValue:
+            parseDigits(stackFrame.digits) || stackFrame.previousValue,
+          digits: [],
+          operation,
+        };
+      });
+    },
+    [finalizeOperation]
+  );
 
   const currentStackValue =
     currentStackFrame.digits.join("") ||
@@ -95,9 +88,9 @@ export function CalculatorProvider({ children }) {
     () => ({
       pushDigit,
       popDigit,
-      currentStackValue,
       pushOperation,
       finalizeOperation,
+      currentStackValue,
     }),
     [pushDigit, popDigit, currentStackValue, pushOperation, finalizeOperation]
   );
