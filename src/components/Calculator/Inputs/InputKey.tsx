@@ -1,5 +1,5 @@
 import { ReactNode, useEffect } from "react";
-import useKeyboardShortcut from "../../lib/useKeyboardShortcut";
+import useKeyboardShortcut from "../../../lib/useKeyboardShortcut";
 
 interface InputKeyProps {
   children: ReactNode;
