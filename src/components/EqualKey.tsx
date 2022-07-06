@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import CalculatorContext from "./CalculatorContext";
+import InputKey from "./InputKey";
 
 function EqualKey() {
   const { finalizeOperation } = useContext(CalculatorContext);
   return (
-    <button className="calculator--key" onClick={finalizeOperation}>
+    <InputKey onPress={finalizeOperation} keyboardKey="=">
       =
-    </button>
+    </InputKey>
   );
 }
 

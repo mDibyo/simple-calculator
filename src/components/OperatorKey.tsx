@@ -1,21 +1,23 @@
 import { useContext } from "react";
 import CalculatorContext from "./CalculatorContext";
+import InputKey from "./InputKey";
 import { Operation } from "./types";
 
 interface OperatorKeyProps {
   value: string;
   operation: Operation;
+  keyboardKey: string;
 }
 
-function OperatorKey({ value, operation }: OperatorKeyProps) {
+function OperatorKey({ value, operation, keyboardKey }: OperatorKeyProps) {
   const { pushOperation } = useContext(CalculatorContext);
   return (
-    <button
-      className="calculator--key"
-      onClick={() => pushOperation(operation)}
+    <InputKey
+      onPress={() => pushOperation(operation)}
+      keyboardKey={keyboardKey}
     >
       {value}
-    </button>
+    </InputKey>
   );
 }
 

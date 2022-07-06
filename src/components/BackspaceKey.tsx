@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import CalculatorContext from "./CalculatorContext";
+import InputKey from "./InputKey";
 
 function BackspaceKey() {
   const { popDigit } = useContext(CalculatorContext);
   return (
-    <button className="calculator--key" onClick={popDigit}>
+    <InputKey onPress={popDigit} keyboardKey="Backspace">
       🔙
-    </button>
+    </InputKey>
   );
 }
 

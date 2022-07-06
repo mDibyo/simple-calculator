@@ -5,10 +5,18 @@ import { Operation } from "./types";
 function Operations() {
   return (
     <div className="calculator--operations">
-      <OperatorKey operation={Operation.Addition} value="+" />
-      <OperatorKey operation={Operation.Subtraction} value="−" />
-      <OperatorKey operation={Operation.Multiplication} value="×" />
-      <OperatorKey operation={Operation.Division} value="÷" />
+      <OperatorKey operation={Operation.Addition} value="+" keyboardKey="+" />
+      <OperatorKey
+        operation={Operation.Subtraction}
+        value="−"
+        keyboardKey="-"
+      />
+      <OperatorKey
+        operation={Operation.Multiplication}
+        value="×"
+        keyboardKey="*"
+      />
+      <OperatorKey operation={Operation.Division} value="÷" keyboardKey="/" />
       <EqualKey />
     </div>
   );

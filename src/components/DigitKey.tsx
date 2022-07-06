@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import CalculatorContext from "./CalculatorContext";
+import InputKey from "./InputKey";
 
 interface DigitKeyProps {
   value: string;
@@ -8,9 +9,9 @@ interface DigitKeyProps {
 function DigitKey({ value }: DigitKeyProps) {
   const { pushDigit } = useContext(CalculatorContext);
   return (
-    <button className="calculator--key" onClick={() => pushDigit(value)}>
+    <InputKey onPress={() => pushDigit(value)} keyboardKey={value}>
       {value}
-    </button>
+    </InputKey>
   );
 }
 
