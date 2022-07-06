@@ -1,13 +1,18 @@
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 
 function useKeyboardShortcut(key: string, onKeyDown: () => void) {
+  const onKeyDownRef = useRef(onKeyDown);
+  useEffect(() => {
+    onKeyDownRef.current = onKeyDown;
+  }, [onKeyDown]);
+
   const listener = useCallback(
     (event: KeyboardEvent) => {
       if (event.key === key) {
-        onKeyDown();
+        onKeyDownRef.current();
       }
     },
-    [key, onKeyDown]
+    [key]
   );
   useEffect(() => {
     window.addEventListener("keydown", listener);
