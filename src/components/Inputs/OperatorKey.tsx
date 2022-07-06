@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import CalculatorContext from "./CalculatorContext";
+import CalculatorContext from "../CalculatorContext";
 import InputKey from "./InputKey";
-import { Operation } from "./types";
+import { Operation } from "../types";
 
 interface OperatorKeyProps {
   value: string;

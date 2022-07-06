@@ -1,8 +1,6 @@
-import BackspaceKey from "./BackspaceKey";
 import { CalculatorProvider } from "./CalculatorContext";
 import Display from "./Display";
-import Numpad from "./NumPad";
-import Operations from "./Operations";
+import Inputs from "./Inputs";
 
 function Calculator() {
   console.log("hello");
@@ -10,10 +8,7 @@ function Calculator() {
     <CalculatorProvider>
       <div className="calculator">
         <Display />
-        <div className="calculator--inputs">
-          <Numpad />
-          <Operations />
-        </div>
+        <Inputs />
       </div>
     </CalculatorProvider>
   );

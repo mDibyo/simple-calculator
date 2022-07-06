@@ -1,6 +1,6 @@
 import EqualKey from "./EqualKey";
 import OperatorKey from "./OperatorKey";
-import { Operation } from "./types";
+import { Operation } from "../operations";
 
 function Operations() {
   return (
