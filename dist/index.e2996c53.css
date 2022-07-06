@@ -1,0 +1,2 @@
+.calculator{width:300px;background-color:#d3d3d3;border:1px solid gray;flex-direction:column;align-items:stretch;display:flex}.calculator--display{text-align:end;background-color:#fff;padding:8px;font-size:3em}.calculator--inputs{margin:4px;display:flex}.calculator--numpad{flex-direction:column;flex:3;justify-content:stretch}.calculator--numpadRow{align-items:stretch;display:flex}.calculator--operations{flex-direction:column;flex:1;display:flex}.calculator--key{height:60px;flex:1 0 auto;margin:4px;font-size:1.5em}
+/*# sourceMappingURL=index.e2996c53.css.map */
