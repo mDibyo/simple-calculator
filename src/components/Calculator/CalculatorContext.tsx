@@ -52,6 +52,13 @@ export function CalculatorProvider({ children }) {
         return stackFrame;
       }
 
+      if (stackFrame.digits.length === 0) {
+        return {
+          ...stackFrame,
+          operation: null,
+        };
+      }
+
       const { previousValue, operation, digits } = stackFrame;
       const currentValue = parseDigits(digits);
       let operationResult = operationCalculators[operation](
