@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: stretch;
 
-  width: 200px;
+  width: 300px;
   background-color: lightgray;
   border: 1px solid gray;
 }
@@ -12,11 +12,12 @@
   background-color: white;
   text-align: end;
   font-size: 3em;
-  padding: 4px;
+  padding: 8px;
 }
 
 .calculator--inputs {
   display: flex;
+  margin: 4px;
 }
 
 .calculator--numpad {
