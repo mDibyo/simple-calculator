@@ -3,7 +3,6 @@ import Display from "./Display";
 import Inputs from "./Inputs";
 
 function Calculator() {
-  console.log("hello");
   return (
     <CalculatorProvider>
       <div className="calculator">

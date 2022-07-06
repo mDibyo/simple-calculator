@@ -94,7 +94,6 @@ export function CalculatorProvider({ children }) {
     }),
     [pushDigit, popDigit, currentStackValue, pushOperation, finalizeOperation]
   );
-  console.log("value", value);
   return (
     <CalculatorContext.Provider value={value}>
       {children}
